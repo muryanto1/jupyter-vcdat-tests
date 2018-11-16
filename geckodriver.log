@@ -1,0 +1,111 @@
+1542395672664	geckodriver	INFO	geckodriver 0.20.0
+1542395672673	geckodriver	INFO	Listening on 127.0.0.1:53602
+1542396119714	geckodriver	INFO	geckodriver 0.20.0
+1542396119719	geckodriver	INFO	Listening on 127.0.0.1:53789
+1542396347741	geckodriver	INFO	geckodriver 0.20.0
+1542396347745	geckodriver	INFO	Listening on 127.0.0.1:53827
+1542396348773	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox" "-marionette" "--headless" "-profile" "/var/folders/pb/tzvpg2ln1b97www9n5kfhq7w000tt8/T/rust_mozprofile.aXWyKuvzoEGA"
+1542396349530	Marionette	INFO	Listening on port 2828
+2018-11-16 11:25:50.694 plugin-container[23693:496673] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x873b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:25:50.711 plugin-container[23693:496673] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x828b, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1542396465220	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/var/folders/pb/tzvpg2ln1b97www9n5kfhq7w000tt8/T/rust_mozprofile.S4NEi1QYj0Uj"
+1542396465966	Marionette	ERROR	Error on starting server: [Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+[Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+MarionetteServer.prototype.start@chrome://marionette/content/server.js:95:19
+MarionetteComponent.prototype.init@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:217:5
+MarionetteComponent.prototype.handle@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:112:5
+
+2018-11-16 11:27:46.790 firefox[23896:500544] IMKInputSession [0x7f8798ac0600 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7f8796f9ef50 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:27:46.972 firefox[23896:500544] IMKInputSession [0x7f8798ac0600 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7f8796f9ef50 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:27:47.183 plugin-container[23897:500670] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7e3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:27:47.199 plugin-container[23897:500670] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x790f, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:27:59.049 firefox[23896:500544] IMKInputSession [0x7f8798ac0600 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7f8796f9ef50 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:27:59.189 firefox[23896:500544] IMKInputSession [0x7f8793549150 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7f8792630040 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:28:02.466 firefox[23896:500544] IMKInputSession [0x7f8798ac0600 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7f8796f9ef50 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:28:02.473 firefox[23896:500544] IMKInputSession [0x7f8798ac0600 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7f8796f9ef50 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+1542396508873	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/var/folders/pb/tzvpg2ln1b97www9n5kfhq7w000tt8/T/rust_mozprofile.VsBsY4WKJEVK"
+1542396509598	Marionette	ERROR	Error on starting server: [Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+[Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+MarionetteServer.prototype.start@chrome://marionette/content/server.js:95:19
+MarionetteComponent.prototype.init@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:217:5
+MarionetteComponent.prototype.handle@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:112:5
+
+2018-11-16 11:28:30.430 firefox[23974:502458] IMKInputSession [0x7f9c68fbfc30 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7f9c61b66830 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:28:30.599 firefox[23974:502458] IMKInputSession [0x7f9c68fbfc30 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7f9c61b66830 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:28:30.814 plugin-container[23978:502609] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x783b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:28:30.832 plugin-container[23978:502609] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x858b, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+[Child 23978] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-esr52-m64-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+[Child 23978] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-esr52-m64-000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2152
+1542396697573	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/var/folders/pb/tzvpg2ln1b97www9n5kfhq7w000tt8/T/rust_mozprofile.JBzZGXkajzhM"
+1542396698378	Marionette	ERROR	Error on starting server: [Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+[Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+MarionetteServer.prototype.start@chrome://marionette/content/server.js:95:19
+MarionetteComponent.prototype.init@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:217:5
+MarionetteComponent.prototype.handle@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:112:5
+
+2018-11-16 11:31:39.199 firefox[24277:506526] IMKInputSession [0x7ffece795ce0 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7ffeca820190 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:31:39.389 firefox[24277:506526] IMKInputSession [0x7ffece795ce0 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7ffeca820190 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:31:39.612 plugin-container[24281:506650] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x833b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:31:39.628 plugin-container[24281:506650] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x788b, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1542396754215	geckodriver	INFO	geckodriver 0.20.0
+1542396754219	geckodriver	INFO	Listening on 127.0.0.1:56659
+1542396755240	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox" "-marionette" "--headless" "-profile" "/var/folders/pb/tzvpg2ln1b97www9n5kfhq7w000tt8/T/rust_mozprofile.Kj4zWbMfPKBU"
+1542396755954	Marionette	ERROR	Error on starting server: [Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+[Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+MarionetteServer.prototype.start@chrome://marionette/content/server.js:95:19
+MarionetteComponent.prototype.init@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:217:5
+MarionetteComponent.prototype.handle@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:112:5
+
+2018-11-16 11:32:37.148 plugin-container[24376:508507] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x863b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:32:37.165 plugin-container[24376:508507] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x824f, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1542396974669	geckodriver	INFO	geckodriver 0.19.1
+1542396974673	geckodriver	INFO	Listening on 127.0.0.1:57912
+1542396975795	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox" "-marionette" "--headless" "-profile" "/var/folders/pb/tzvpg2ln1b97www9n5kfhq7w000tt8/T/rust_mozprofile.dujo93jmCMp9"
+1542396976492	Marionette	ERROR	Error on starting server: [Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+[Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+MarionetteServer.prototype.start@chrome://marionette/content/server.js:95:19
+MarionetteComponent.prototype.init@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:217:5
+MarionetteComponent.prototype.handle@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:112:5
+
+2018-11-16 11:36:17.642 plugin-container[24742:517584] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8537, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:36:17.658 plugin-container[24742:517584] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x838b, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:36:48.333 firefox[24737:517429] IMKInputSession [0x7fd804f67800 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7fd80b88c550 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:36:48.340 firefox[24737:517429] IMKInputSession [0x7fd804f67800 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7fd80b88c550 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:36:53.207 firefox[24737:517429] IMKInputSession [0x7fd804f67800 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7fd80b88c550 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+1542397113900	geckodriver	INFO	geckodriver 0.19.1
+1542397113904	geckodriver	INFO	Listening on 127.0.0.1:58918
+1542397114982	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox" "-marionette" "--headless" "-profile" "/var/folders/pb/tzvpg2ln1b97www9n5kfhq7w000tt8/T/rust_mozprofile.hP6UBmQUqcGg"
+1542397115664	Marionette	ERROR	Error on starting server: [Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+[Exception... "Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]"  nsresult: "0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE)"  location: "JS frame :: chrome://marionette/content/server.js :: MarionetteServer.prototype.start :: line 95"  data: no]
+MarionetteServer.prototype.start@chrome://marionette/content/server.js:95:19
+MarionetteComponent.prototype.init@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:217:5
+MarionetteComponent.prototype.handle@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/marionette.js:112:5
+
+2018-11-16 11:38:36.857 plugin-container[24965:523426] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8a3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:38:36.872 plugin-container[24965:523426] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x858b, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:38:50.080 firefox[24375:508388] IMKInputSession [0x7fd208ed1350 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7fd20b00ac90 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:38:50.117 firefox[24375:508388] IMKInputSession [0x7fd208ed1350 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7fd20b00ac90 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:38:50.348 plugin-container[24986:524361] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x893b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:38:50.364 plugin-container[24986:524361] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7d8b, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:38:57.758 firefox[24375:508388] IMKInputSession [0x7fd202e294a0 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7fd204430770 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:38:57.791 firefox[24375:508388] IMKInputSession [0x7fd202e294a0 presentFunctionRowItemTextInputViewWithEndpoint:completionHandler:] : [self textInputContext]=0x7fd204430770 *NO* NSRemoteViewController to client, NSError=Error Domain=NSCocoaErrorDomain Code=4097 "connection from pid 0" UserInfo={NSDebugDescription=connection from pid 0}, com.apple.inputmethod.EmojiFunctionRowItem
+2018-11-16 11:38:58.071 plugin-container[24999:525109] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x793b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-11-16 11:38:58.087 plugin-container[24999:525109] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7c0f, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
