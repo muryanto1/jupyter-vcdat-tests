@@ -1,0 +1,131 @@
+version: 2
+
+aliases:
+
+   - &setup_miniconda
+    name: setup_miniconda
+    command: |
+      git clone -b validateNightly --depth 1 git@github.com:CDAT/cdat $WORKDIR/cdat
+      python $WORKDIR/cdat/scripts/install_miniconda.py -w $WORKDIR -p 'py3'
+
+   - &prepare_firefox
+     name: prepare_firefox
+     command: |
+        sudo apt-get purge -y firefox
+        wget https://sourceforge.net/projects/ubuntuzilla/files/mozilla/apt/pool/main/f/firefox-mozilla-build/firefox-mozilla-build_63.0.3-0ubuntu1_amd64.deb
+        sudo dpkg -i firefox-mozilla-build_63.0.3-0ubuntu1_amd64.deb
+        wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
+        gunzip geckodriver-v0.23.0-linux64.tar.gz
+        tar -xvf geckodriver-v0.23.0-linux64.tar
+        echo "xxx ls"
+        ls
+        echo "xxx pwd"
+        pwd
+        sudo mv geckodriver /usr/local/bin
+        export PATH=/usr/local/bin:$PATH
+        type geckodriver
+        type firefox
+
+   - &setup_for_selenium_tests
+     name: setup_for_selenium_tests
+     command: |
+        echo "xxx setup_for_selenium_tests xxx"
+        export PATH=$WORKDIR/miniconda/bin:$PATH
+        type python
+        python -m venv venv
+        . venv/bin/activate
+        pip install selenium
+        pip install requests
+        pip install pytest
+        pip install pytest-testconfig
+
+   - &download_selenium
+     name: download_selenium
+     command: |
+        cd $WORKDIR
+        #curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+        curl -O http://selenium-release.storage.googleapis.com/3.9/selenium-server-standalone-3.9.1.jar
+
+   - &start_selenium
+     name: start_selenium
+     command: |
+        cd $WORKDIR
+        mkdir test-reports
+        java -jar selenium-server-standalone-3.9.1.jar -log test-reports/selenium.log
+     background: true
+
+   - &setup_jupyter_vcdat
+     name: setup_jupyter_vcdat
+     command: |
+        export PATH=$WORKDIR/miniconda/bin:$PATH
+        export CDAT_ANONYMOUS_LOG=False
+        export $(dbus-launch)
+        export NSS_USE_SHARED_DB=ENABLED
+        firefox --version
+        conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels
+        source activate jupyter-vcdat
+        cd $WORKDIR
+        echo "XXX git clone https://github.com/CDAT/vcs.git xxx"
+        git clone https://github.com/CDAT/vcs.git
+        cd vcs
+        git checkout boxfill_widgets_jupyter
+        python setup.py install
+        cd ..
+        echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
+        git clone https://github.com/CDAT/jupyter-vcdat.git
+        cd jupyter-vcdat
+        python setup.py install
+        echo "xxx jupyter labextension install . xxx"
+        jupyter labextension install .
+        echo "xxx jupyter serverextension enable --py vcs_backend xxx"
+        jupyter serverextension enable --py vcs_backend
+        #echo "xxx jupyter lab xxx"
+        #jupyter lab --ip='127.0.0.1'
+        cd ..
+
+   - &run_jupyter_vcdat
+     name: run_jupyter_vcdat
+     command: |
+        pwd
+        ls
+        export PATH=$WORKDIR/miniconda/bin:$PATH
+        export CDAT_ANONYMOUS_LOG=False
+        export $(dbus-launch)
+        export NSS_USE_SHARED_DB=ENABLED
+        source activate jupyter-vcdat
+        cd jupyter-vcdat
+        jupyter lab --ip='127.0.0.1'
+     background: true
+
+   - &run_selenium_tests
+     name: run_selenium_tests
+     command: |
+        export PATH=$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
+        . venv/bin/activate
+        pytest -s -v tests/test_open_variable.py
+
+jobs:
+   test_selenium:
+      docker:
+         #- image: selenium/standalone-chrome:3.1.0
+         #- image: circleci/python:3.6.2-stretch-browsers
+         - image: muryanto1/centos_for_jupyter_vcdat
+      environment:
+         WORKDIR: 'workdir'
+      steps:
+         - checkout
+         - run: id
+         - run: *prepare_firefox
+         - run: *setup_miniconda 
+         - run: *download_selenium
+         - run: *start_selenium
+         - run: *setup_jupyter_vcdat
+         - run: *run_jupyter_vcdat
+         - run: *setup_for_selenium_tests
+         - run: *run_selenium_tests
+
+workflows:
+   version: 2
+   browser_tests:
+      jobs:
+         - test_selenium
