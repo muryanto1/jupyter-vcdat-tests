@@ -81,8 +81,7 @@ aliases:
         jupyter serverextension enable --py vcs_backend
         #echo "xxx jupyter lab xxx"
         #jupyter lab --ip='127.0.0.1'
-        cd ..
-
+        
    - &run_jupyter_vcdat
      name: run_jupyter_vcdat
      command: |
@@ -93,7 +92,7 @@ aliases:
         export $(dbus-launch)
         export NSS_USE_SHARED_DB=ENABLED
         source activate jupyter-vcdat
-        cd jupyter-vcdat
+        cd $WORKDIR/jupyter-vcdat
         jupyter lab --ip='127.0.0.1'
      background: true
 
