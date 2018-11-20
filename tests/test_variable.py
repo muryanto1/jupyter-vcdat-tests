@@ -19,14 +19,14 @@ class BrowserTest(BaseTestCase):
     def test_vcdat_jupyter_lab(self):
         print("xxx test_vcdat_jupyter_lab xxx")
         #ws = "http://localhost:8888/?token=fafc834780204f1b82de8c0aca97b9cdb52ae76b21f60b45"
-        #ws = "www.google.com"
-        ws = "http://localhost:8888"
+        ws = "https://www.google.com"
+        #ws = "http://localhost:8888"
         main_page = MainPage(self.driver, ws)
 
-        main_page.load_file("clt.nc")
+        ###main_page.load_file("clt.nc")
 
         # validate what is displayed in the console
-        console = ConsoleTab(self.driver, 'Console 1')
+        ###console = ConsoleTab(self.driver, 'Console 1')
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
