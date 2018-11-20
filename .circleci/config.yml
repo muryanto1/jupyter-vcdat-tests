@@ -101,7 +101,7 @@ aliases:
      name: run_selenium_tests
      command: |
         export PATH=$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
-	ps -ef
+        ps -ef
         . venv/bin/activate
         pytest -s -v tests/test_variable.py
 
