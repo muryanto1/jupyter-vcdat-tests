@@ -102,7 +102,7 @@ aliases:
      command: |
         export PATH=$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
         . venv/bin/activate
-        pytest -s -v tests/test_open_variable.py
+        pytest -s -v tests/test_variable.py
 
 jobs:
    test_selenium:
