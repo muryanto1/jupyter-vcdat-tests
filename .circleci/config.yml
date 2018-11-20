@@ -79,8 +79,9 @@ aliases:
         jupyter labextension install .
         echo "xxx jupyter serverextension enable --py vcs_backend xxx"
         jupyter serverextension enable --py vcs_backend
-        #echo "xxx jupyter lab xxx"
-        #jupyter lab --ip='127.0.0.1'
+        echo "xxx jupyter lab xxx"
+        jupyter lab --ip='127.0.0.1'
+     background: true
         
    - &run_jupyter_vcdat
      name: run_jupyter_vcdat
@@ -119,7 +120,7 @@ jobs:
          - run: *download_selenium
          - run: *start_selenium
          - run: *setup_jupyter_vcdat
-         - run: *run_jupyter_vcdat
+         #- run: *run_jupyter_vcdat
          - run: *setup_for_selenium_tests
          - run: *run_selenium_tests
 
