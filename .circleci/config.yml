@@ -78,10 +78,8 @@ aliases:
         echo "xxx jupyter labextension install . xxx"
         jupyter labextension install .
         echo "xxx jupyter serverextension enable --py vcs_backend xxx"
-        jupyter serverextension enable --py vcs_backend
-        echo "xxx jupyter lab xxx"
-        jupyter lab --ip='127.0.0.1'
-     background: true
+        #jupyter serverextension enable --py vcs_backend
+        #jupyter lab --ip='127.0.0.1'
         
    - &run_jupyter_vcdat
      name: run_jupyter_vcdat
@@ -94,6 +92,8 @@ aliases:
         export NSS_USE_SHARED_DB=ENABLED
         source activate jupyter-vcdat
         cd $WORKDIR/jupyter-vcdat
+        ls
+	jupyter serverextension enable --py vcs_backend	
         jupyter lab --ip='127.0.0.1'
      background: true
 
