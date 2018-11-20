@@ -61,8 +61,8 @@ class BaseTestCase(unittest.TestCase):
             options.binary_location = "/usr/local/bin/geckodriver"
 
             # TEMPORARY
-            firefox_binary = FirefoxBinary("/Applications/Firefox.app/Contents/MacOS/firefox")
-            #firefox_binary = FirefoxBinary("/usr/bin/firefox")
+            #firefox_binary = FirefoxBinary("/Applications/Firefox.app/Contents/MacOS/firefox")
+            firefox_binary = FirefoxBinary("/usr/bin/firefox")
             #self.driver = webdriver.Firefox(firefox_profile=firefox_profile,
             #                                firefox_binary=firefox_binary,
             #                                options=options,
