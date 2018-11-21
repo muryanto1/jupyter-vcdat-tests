@@ -77,7 +77,7 @@ class BaseTestCase(unittest.TestCase):
                                             options=options,
                                             capabilities = firefox_capabilities)
 
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(20)
         #self.driver.get("https://www.google.com")
         time.sleep(3)
 
