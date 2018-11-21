@@ -49,17 +49,17 @@ class MainPage(BasePage):
         time.sleep(self._delay)
 
         # validate that we have 'Select Kernel' pop up
-        self.driver.find_element_by_xpath(self._select_kernel_popup_locator)
-        print("...FOUND 'Select Kernel' pop up")
-        time.sleep(self._delay)
+        ##self.driver.find_element_by_xpath(self._select_kernel_popup_locator)
+        ##print("...FOUND 'Select Kernel' pop up")
+        ##time.sleep(self._delay)
 
         # click on the drop down arrow
-        self.driver.find_element_by_xpath(self._select_kernel_drop_down_locator).click()
-        time.sleep(self._delay)
+        ##self.driver.find_element_by_xpath(self._select_kernel_drop_down_locator).click()
+        ##time.sleep(self._delay)
 
-        print("xxx _kernel_locator: {l}".format(l=self._kernel_locator))
-        self.driver.find_element_by_xpath(self._kernel_locator).click()
-        time.sleep(self._delay)
+        ##print("xxx _kernel_locator: {l}".format(l=self._kernel_locator))
+        ##self.driver.find_element_by_xpath(self._kernel_locator).click()
+        ##time.sleep(self._delay)
 
         # click on the 'SELECT' button
         print("xxx click on SELECT button")
