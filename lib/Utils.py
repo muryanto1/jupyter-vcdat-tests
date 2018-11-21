@@ -22,7 +22,7 @@ class TestUtils(object):
             current_wd = os.getcwd()
         else:
             current_wd = cwd
-
+        print("xxx PATH: {e}".format(e=os.environ["PATH"]))
         P = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=stderr_setting,
                              bufsize=0, cwd=current_wd, shell=shell_cmd)
         out = []
