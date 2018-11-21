@@ -80,7 +80,10 @@ aliases:
         echo "xxx jupyter serverextension enable --py vcs_backend xxx"
         #jupyter serverextension enable --py vcs_backend
         #jupyter lab --ip='127.0.0.1'
-        
+        pip install selenium
+        pip install requests
+        pip install pytest
+
    - &run_jupyter_vcdat
      name: run_jupyter_vcdat
      command: |
@@ -119,8 +122,8 @@ jobs:
          - run: id
          - run: *prepare_firefox
          - run: *setup_miniconda 
-         - run: *download_selenium
-         - run: *start_selenium
+         #- run: *download_selenium
+         #- run: *start_selenium
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
          - run: *setup_for_selenium_tests
