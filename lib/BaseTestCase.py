@@ -35,7 +35,7 @@ class BaseTestCase(unittest.TestCase):
             #options.binary_location = "/usr/local/bin/chromedriver"
             chrome_options = webdriver.ChromeOptions()
             chrome_options.add_argument("--disable-popup-blocking")
-            chrome_options.add_argument('window-size=1280,1024')
+            chrome_options.add_argument("--start-maximized")
             #chrome_options.binary_location = "/usr/local/bin/chromedriver"
             ##chrome_options.add_argument("--headless")
             preferences = {"download.default_directory": self._download_dir,
