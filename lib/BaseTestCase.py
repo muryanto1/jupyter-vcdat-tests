@@ -28,8 +28,8 @@ class BaseTestCase(unittest.TestCase):
         options.add_argument("--headless")
         #options.add_argument("--foreground")
         # TEMPORARY
-        #browser = 'chrome'
-        browser = 'firefox'
+        browser = 'chrome'
+        #browser = 'firefox'
 
         if browser == 'chrome':
             #options.binary_location = "/usr/local/bin/chromedriver"
@@ -39,7 +39,7 @@ class BaseTestCase(unittest.TestCase):
             preferences = {"download.default_directory": self._download_dir,
                            "directory_upgrade": True,
                            "safebrowsing.enabled": True,
-                           "prompt_for_download": "false"}
+                           "prompt_for_download": True}
             chrome_options.add_experimental_option("prefs", preferences)
             self.driver = webdriver.Chrome(options=chrome_options)
         elif browser == 'firefox':

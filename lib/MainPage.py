@@ -46,7 +46,7 @@ class MainPage(BasePage):
         file_element = self.driver.find_element_by_xpath(file_locator)
         actionChains = ActionChains(self.driver)
         actionChains.double_click(file_element).perform()
-        time.sleep(self._delay * 3)
+        time.sleep(self._delay)
 
         # validate that we have 'Select Kernel' pop up
         self.driver.find_element_by_xpath(self._select_kernel_popup_locator)
