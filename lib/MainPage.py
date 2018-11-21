@@ -23,7 +23,7 @@ class MainPage(BasePage):
     _select_kernel_popup_locator = "//div[@class='p-Widget jp-Dialog']//div[@class='p-Widget p-Panel jp-Dialog-content']//span[contains(text(), 'Select Kernel')]"
     _select_kernel_drop_down_locator = "//select[@class='jp-mod-styled']"
     _kernel_locator = "//option[contains(text(), '{k}')]".format(k=_kernel)
-    _kernel_select_button_locator = "//div[contains(text(), 'SELECT')]"
+    _kernel_select_button_locator = "//button//div[contains(text(), 'SELECT')]"
     _file_load_error_ok_locator = "//div[contains(text(), 'OK')]"
 
 
