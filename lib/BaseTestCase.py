@@ -56,7 +56,8 @@ class BaseTestCase(unittest.TestCase):
             
             firefox_capabilities = DesiredCapabilities().FIREFOX
             firefox_capabilities['marionette'] = True
-            firefox_capabilities['moz:firefoxOptions'] = {'args': ['--headless']}
+            #firefox_capabilities['moz:firefoxOptions'] = {'args': ['--headless']}
+            firefox_capabilities['moz:firefoxOptions'] = {'args': ['--foreground']}
 
             options.binary_location = "/usr/local/bin/geckodriver"
 
