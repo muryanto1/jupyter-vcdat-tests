@@ -19,7 +19,8 @@ class MainPage(BasePage):
     #_logo_locator = "//div[@id='jp-MainLogo']"
     _logo_locator = 'jp-MainLogo'
     _file_folder_locator = "//li[@title='File Browser']"
-    _select_kernel_popup_locator = "//div[@class='p-Widget p-Panel jp-Dialog-content']//span[contains(text(), 'Select Kernel')]"
+    # _select_kernel_popup_locator = "//div[@class='p-Widget p-Panel jp-Dialog-content']//span[contains(text(), 'Select Kernel')]"
+    _select_kernel_popup_locator = "//div[@class='p-Widget jp-Dialog']//div[@class='p-Widget p-Panel jp-Dialog-content']//span[contains(text(), 'Select Kernel')]"
     _select_kernel_drop_down_locator = "//select[@class='jp-mod-styled']"
     _kernel_locator = "//option[contains(text(), '{k}')]".format(k=_kernel)
     _kernel_select_button_locator = "//div[contains(text(), 'SELECT')]"
