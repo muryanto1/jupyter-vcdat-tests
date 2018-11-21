@@ -19,6 +19,7 @@ class MainPage(BasePage):
     #_logo_locator = "//div[@id='jp-MainLogo']"
     _logo_locator = 'jp-MainLogo'
     _file_folder_locator = "//li[@title='File Browser']"
+    _temp_select_popup_locator = "//div[@class='p-Widget p-Panel jp-Dialog-content']"
     # _select_kernel_popup_locator = "//div[@class='p-Widget p-Panel jp-Dialog-content']//span[contains(text(), 'Select Kernel')]"
     _select_kernel_popup_locator = "//div[@class='p-Widget jp-Dialog']//div[@class='p-Widget p-Panel jp-Dialog-content']//span[contains(text(), 'Select Kernel')]"
     _select_kernel_drop_down_locator = "//select[@class='jp-mod-styled']"
@@ -49,6 +50,11 @@ class MainPage(BasePage):
         actionChains.double_click(file_element).perform()
         time.sleep(self._delay)
         print("xxx AFTER double clicking on file name xxx")
+
+        # TESTING
+        print("xxx see if we can find this temp pop up locator xxx")
+        self.driver.find_element_by_xpath(self._temp_select_popup_locator)
+        print("xxx FOUND it xxx")
 
         # validate that we have 'Select Kernel' pop up
         self.driver.find_element_by_xpath(self._select_kernel_popup_locator)
