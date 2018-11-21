@@ -14,19 +14,23 @@ from BaseTestCase import BaseTestCase
 from BasePage import InvalidPageException
 from MainPage import MainPage
 from Tab import ConsoleTab
+from JupyterUtils import JupyterUtils
 
 class BrowserTest(BaseTestCase):
     def test_vcdat_jupyter_lab(self):
         print("xxx test_vcdat_jupyter_lab xxx")
-        #ws = "http://localhost:8888/?token=fafc834780204f1b82de8c0aca97b9cdb52ae76b21f60b45"
-        #ws = "http://www.google.com"
-        ws = "http://localhost:8888"
-        main_page = MainPage(self.driver, ws)
+        utils = JupyterUtils()
+        server = utils.get_server()
 
-        ##main_page.load_file("clt.nc")
+        ##ws = "http://localhost:8888/?token=4a25c7eb4ac7042da403eecbac6691a51132543b95b4e613"
+        #ws = "http://www.google.com"
+        #ws = "http://localhost:8888"
+        main_page = MainPage(self.driver, server)
+
+        main_page.load_file("clt.nc")
 
         # validate what is displayed in the console
-        ##console = ConsoleTab(self.driver, 'Console 1')
+        console = ConsoleTab(self.driver, 'Console 1')
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

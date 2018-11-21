@@ -33,7 +33,7 @@ class MainPage(BasePage):
     def _validate_page(self):
         # validate Main page is displaying a 'Home' tab
         print("...MainPage.validatePage()")
-        ###logo_element = self.driver.find_element_by_id(self._logo_locator)
+        logo_element = self.driver.find_element_by_id(self._logo_locator)
 
     def load_file(self, fname):
         # find file folder icon on left panel, and click
