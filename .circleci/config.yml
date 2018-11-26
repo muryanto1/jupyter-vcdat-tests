@@ -130,7 +130,7 @@ jobs:
          #- image: circleci/python:3.6.2-stretch-browsers
          #- image: muryanto1/centos_for_jupyter_vcdat
       machine:
-         image: circleci/classic:latest
+         image: circleci/classic:latest-browsers
       environment:
          WORKDIR: 'workdir'
       steps:
