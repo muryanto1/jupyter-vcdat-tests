@@ -135,15 +135,15 @@ jobs:
          - run: *prepare_firefox
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
+         #- run: *download_selenium
+         #- run: *start_selenium
+         - run: *run_jupyter_vcdat
          - run: *prep_conda_cache
          - save_cache:
               key: jupyter-vcdat-1
               paths: miniconda
-         #- run: *download_selenium
-         #- run: *start_selenium
-         - run: *run_jupyter_vcdat
-         - run: *setup_for_selenium_tests
-         - run: *run_selenium_tests
+         #- run: *setup_for_selenium_tests
+         #- run: *run_selenium_tests
 
    run_tests:
       docker:
