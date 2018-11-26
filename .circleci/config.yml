@@ -109,6 +109,18 @@ aliases:
         source activate jupyter-vcdat
         pytest -s -v tests/test_variable.py
 
+  - &prep_conda_cache
+    name: prep_conda_cache
+    command: |
+        mv $WORKDIR/miniconda miniconda
+
+  - &get_conda_cache
+    name: get_conda_cache
+    command: |
+        mkdir -p $WORKDIR
+        mv miniconda $WORKDIR/
+        export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
+
 jobs:
    test_selenium:
       docker:
@@ -122,9 +134,13 @@ jobs:
          - run: id
          - run: *prepare_firefox
          - run: *setup_miniconda 
+         - run: *setup_jupyter_vcdat
+         - run: *prep_conda_cache
+         - save_cache:
+              key: jupyter-vcdat-1
+              paths: miniconda
          #- run: *download_selenium
          #- run: *start_selenium
-         - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
          - run: *setup_for_selenium_tests
          - run: *run_selenium_tests
