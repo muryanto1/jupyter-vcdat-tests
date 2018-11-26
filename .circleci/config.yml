@@ -139,25 +139,21 @@ jobs:
          - run: *prepare_firefox
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
-         #- run: *download_selenium
-         #- run: *start_selenium
          - run: *run_jupyter_vcdat
+         - persist_to_workspace:
+             root: .   
+             paths: workdir
          #- run: *run_selenium_tests
 
    run_tests:
-      docker:
-         #- image: selenium/standalone-chrome:3.1.0
-         #- image: circleci/python:3.6.2-stretch-browsers
-         - image: muryanto1/centos_for_jupyter_vcdat
+      machine:
+         image: circleci/classic:latest
       environment:
-         WORKDIR: '/home/circleci/project/workdir'
+         WORKDIR: 'workdir'
       steps:
-         - restore_cache:
-             keys:
-               - jupyter-vcdat-2
-         - run: *get_conda_cache
-         - run: *prepare_firefox
-         - run: *run_jupyter_vcdat
+         - attach_workspace:
+             at: .
+         - run: ls
          - run: *run_selenium_tests
 
 workflows:
@@ -165,7 +161,7 @@ workflows:
    browser_tests:
       jobs:
          - test_selenium
-         #- run_tests:
-         #     requires:
-         #        - test_selenium
+         - run_tests:
+              requires:
+                 - test_selenium
  
