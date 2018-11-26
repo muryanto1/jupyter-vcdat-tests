@@ -135,15 +135,23 @@ jobs:
          - run: *prepare_firefox
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
-         - run: *prep_conda_cache
-         - save_cache:
-              key: jupyter-vcdat-1
-              paths: miniconda
          #- run: *download_selenium
          #- run: *start_selenium
          - run: *run_jupyter_vcdat
          - run: *setup_for_selenium_tests
          - run: *run_selenium_tests
+
+   run_tests:
+      docker:
+         #- image: selenium/standalone-chrome:3.1.0
+         #- image: circleci/python:3.6.2-stretch-browsers
+         - image: muryanto1/centos_for_jupyter_vcdat
+      environment:
+         WORKDIR: 'workdir'
+      steps:
+         - checkout
+         - run: id
+         - run: *prepare_firefox
 
 workflows:
    version: 2
