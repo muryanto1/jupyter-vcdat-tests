@@ -140,10 +140,7 @@ jobs:
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
-         - persist_to_workspace:
-             root: .   
-             paths: workdir
-         #- run: *run_selenium_tests
+          #- run: *run_selenium_tests
 
    run_tests:
       machine:
@@ -151,9 +148,7 @@ jobs:
       environment:
          WORKDIR: 'workdir'
       steps:
-         - attach_workspace:
-             at: .
-         - run: ls
+         - checkout
          - run: *run_selenium_tests
 
 workflows:
@@ -161,7 +156,7 @@ workflows:
    browser_tests:
       jobs:
          - test_selenium
-         - run_tests:
-              requires:
-                 - test_selenium
+         #- run_tests:
+         #     requires:
+         #        - test_selenium
  
