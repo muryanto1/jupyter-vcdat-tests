@@ -152,12 +152,10 @@ jobs:
       environment:
          WORKDIR: 'workdir'
       steps:
-         - checkout
-         - run: id
-         - run: *prepare_firefox
          - restore_cache:
-           keys:
+             keys:
                - jupyter-vcdat-1
+         - run: *prepare_firefox
          - run: *run_jupyter_vcdat
          - run: *run_selenium_tests
 
@@ -165,8 +163,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         - test_selenium
-         - run_tests:
-              requires:
-                 - test_selenium
+         #- test_selenium
+         - run_tests
+         #     requires:
+         #        - test_selenium
            
