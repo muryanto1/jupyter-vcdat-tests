@@ -142,8 +142,7 @@ jobs:
          #- save_cache:
          #     key: jupyter-vcdat-1
          #     paths: miniconda
-         #- run: *setup_for_selenium_tests
-         #- run: *run_selenium_tests
+         - run: *run_selenium_tests
 
    run_tests:
       docker:
