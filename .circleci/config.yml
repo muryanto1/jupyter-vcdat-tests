@@ -156,7 +156,7 @@ workflows:
    browser_tests:
       jobs:
          - test_selenium
-         - run_tests
+         - run_tests:
               requires:
                  - test_selenium
            
