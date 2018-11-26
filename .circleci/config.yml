@@ -125,12 +125,12 @@ aliases:
 
 jobs:
    test_selenium:
-      docker:
+      #docker:
          #- image: selenium/standalone-chrome:3.1.0
-         - image: circleci/python:3.6.2-stretch-browsers
+         #- image: circleci/python:3.6.2-stretch-browsers
          #- image: muryanto1/centos_for_jupyter_vcdat
-      #machine:
-      #   image: circleci/classic:latest
+      machine:
+         image: circleci/classic:latest
       environment:
          WORKDIR: 'workdir'
       steps:
@@ -142,7 +142,7 @@ jobs:
          #- run: *download_selenium
          #- run: *start_selenium
          - run: *run_jupyter_vcdat
-         - run: *run_selenium_tests
+         #- run: *run_selenium_tests
 
    run_tests:
       docker:
