@@ -109,14 +109,14 @@ aliases:
         source activate jupyter-vcdat
         pytest -s -v tests/test_variable.py
 
-  - &prep_conda_cache
-    name: prep_conda_cache
-    command: |
+   - &prep_conda_cache
+     name: prep_conda_cache
+     command: |
         mv $WORKDIR/miniconda miniconda
 
-  - &get_conda_cache
-    name: get_conda_cache
-    command: |
+   - &get_conda_cache
+     name: get_conda_cache
+     command: |
         mkdir -p $WORKDIR
         mv miniconda $WORKDIR/
         export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
