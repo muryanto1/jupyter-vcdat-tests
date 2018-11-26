@@ -155,6 +155,7 @@ jobs:
          - restore_cache:
              keys:
                - jupyter-vcdat-1
+         - run: *get_conda_cache
          - run: *prepare_firefox
          - run: *run_jupyter_vcdat
          - run: *run_selenium_tests
