@@ -40,7 +40,7 @@ class BaseTestCase(unittest.TestCase):
             chrome_options.add_argument("--headless")
             preferences = {"download.default_directory": self._download_dir,
                            "directory_upgrade": True,
-                           "safebrowsing.enabled": True,
+                           #"safebrowsing.enabled": True,
                            "prompt_for_download": True}
             chrome_options.add_experimental_option("prefs", preferences)
             self.driver = webdriver.Chrome(options=chrome_options)
