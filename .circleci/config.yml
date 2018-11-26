@@ -90,6 +90,8 @@ aliases:
      command: |
         pwd
         ls
+        echo "xxx ls $WORKDIR xxx"
+        ls $WORKDIR
         export PATH=$WORKDIR/miniconda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
         export $(dbus-launch)
@@ -153,8 +155,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         - test_selenium
-         - run_tests:
-              requires:
-                 - test_selenium
+         #- test_selenium
+         - run_tests
+         #     requires:
+         #        - test_selenium
            
