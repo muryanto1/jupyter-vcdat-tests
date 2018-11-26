@@ -112,6 +112,15 @@ aliases:
         source activate jupyter-vcdat
         pytest -s -v tests/test_variable.py
 
+   - &prep_conda_cache
+     name: prep_conda_cache
+     command: |
+        mv $WORKDIR save_workdir
+
+   - &get_conda_cache
+     name: get_conda_cache
+     command: |
+        mv save_workdir workdir
 
 jobs:
    test_selenium:
@@ -130,10 +139,10 @@ jobs:
          #- run: *download_selenium
          #- run: *start_selenium
          #- run: *run_jupyter_vcdat
-         - run: ls
+         - run: *prep_conda_cache
          - save_cache:
               key: jupyter-vcdat-2
-              paths: workdir
+              paths: save_workdir
          #- run: *run_selenium_tests
 
    run_tests:
@@ -147,6 +156,7 @@ jobs:
          - restore_cache:
              keys:
                - jupyter-vcdat-2
+         - run: *get_conda_cache
          - run: *prepare_firefox
          - run: *run_jupyter_vcdat
          - run: *run_selenium_tests
