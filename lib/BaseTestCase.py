@@ -32,15 +32,12 @@ class BaseTestCase(unittest.TestCase):
         #browser = 'firefox'
 
         if browser == 'chrome':
-            #options.binary_location = "/usr/local/bin/chromedriver"
             chrome_options = webdriver.ChromeOptions()
             chrome_options.add_argument("--disable-popup-blocking")
             chrome_options.add_argument("--start-maximized")
-            #chrome_options.binary_location = "/usr/local/bin/chromedriver"
             chrome_options.add_argument("--headless")
             preferences = {"download.default_directory": self._download_dir,
                            "directory_upgrade": True,
-                           #"safebrowsing.enabled": True,
                            "prompt_for_download": True}
             chrome_options.add_experimental_option("prefs", preferences)
             self.driver = webdriver.Chrome(options=chrome_options)
