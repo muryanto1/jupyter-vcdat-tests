@@ -153,8 +153,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         #- test_selenium
-         - run_tests
-         #     requires:
-         #        - test_selenium
+         - test_selenium
+         - run_tests:
+              requires:
+                 - test_selenium
            
