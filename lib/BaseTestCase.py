@@ -38,6 +38,7 @@ class BaseTestCase(unittest.TestCase):
             chrome_options.add_argument("--headless")
             preferences = {"download.default_directory": self._download_dir,
                            "directory_upgrade": True,
+                           "safebrowsing.enabled": True,
                            "prompt_for_download": True}
             chrome_options.add_experimental_option("prefs", preferences)
             self.driver = webdriver.Chrome(options=chrome_options)
@@ -74,7 +75,7 @@ class BaseTestCase(unittest.TestCase):
                                             options=options,
                                             capabilities = firefox_capabilities)
 
-        self.driver.implicitly_wait(60)
+        self.driver.implicitly_wait(20)
         #self.driver.get("https://www.google.com")
         time.sleep(3)
 
