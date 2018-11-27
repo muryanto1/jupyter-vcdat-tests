@@ -17,7 +17,7 @@ from Tab import ConsoleTab
 from JupyterUtils import JupyterUtils
 
 class BrowserTest(BaseTestCase):
-    def test_basic(self):
+    def ABCtest_basic(self):
         print("xxx test_vcdat_jupyter_lab xxx")
         utils = JupyterUtils()
         server = utils.get_server()
