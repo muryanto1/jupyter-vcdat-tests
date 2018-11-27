@@ -78,7 +78,7 @@ aliases:
         echo "xxx jupyter labextension install . xxx"
         jupyter labextension install .
         echo "xxx jupyter serverextension enable --py vcs_backend xxx"
-        #jupyter serverextension enable --py vcs_backend
+        jupyter serverextension enable --py vcs_backend
         #jupyter lab --ip='127.0.0.1'
         pip install selenium
         pip install requests
@@ -99,7 +99,7 @@ aliases:
         source activate jupyter-vcdat
         cd $WORKDIR/jupyter-vcdat
         ls
-        jupyter serverextension enable --py vcs_backend	
+        #jupyter serverextension enable --py vcs_backend	
         jupyter lab --ip='127.0.0.1'
      background: true
 
@@ -108,8 +108,8 @@ aliases:
      command: |
         pwd
         ls
-        echo "sleep for 120 seconds"
-        sleep 120
+        echo "sleep for 300 seconds"
+        sleep 300
         date
         export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
         source activate jupyter-vcdat
