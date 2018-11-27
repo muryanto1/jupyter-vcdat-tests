@@ -106,9 +106,9 @@ aliases:
    - &run_selenium_tests
      name: run_selenium_tests
      command: |
+        pwd
+        ls
         export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
-        ps -ef
-        #. venv/bin/activate
         source activate jupyter-vcdat
         pytest -s -v tests/test_variable.py
 
@@ -140,7 +140,7 @@ jobs:
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
-         #- run: *run_selenium_tests
+         - run: *run_selenium_tests
 
    run_tests:
       machine:
