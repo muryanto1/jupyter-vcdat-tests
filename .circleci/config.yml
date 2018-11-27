@@ -108,8 +108,8 @@ aliases:
      command: |
         pwd
         ls
-        echo "sleep for 300 seconds"
-        sleep 300
+        echo "sleep for 480 seconds"
+        sleep 480
         date
         export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
         source activate jupyter-vcdat
