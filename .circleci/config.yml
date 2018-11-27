@@ -108,6 +108,8 @@ aliases:
      command: |
         pwd
         ls
+        echo "sleep for 60 seconds"
+        sleep 60
         export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
         source activate jupyter-vcdat
         pytest -s -v tests/test_variable.py
