@@ -74,8 +74,8 @@ aliases:
         cd ..
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
         git clone https://github.com/CDAT/jupyter-vcdat.git
-        git checkout vcdat2.0-sterling
         cd jupyter-vcdat
+        git checkout vcdat2.0-sterling
         python setup.py install
         echo "xxx jupyter labextension install . xxx"
         jupyter labextension install .
