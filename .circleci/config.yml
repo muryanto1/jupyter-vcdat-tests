@@ -135,8 +135,6 @@ jobs:
          #- image: muryanto1/centos_for_jupyter_vcdat
       machine:
          image: circleci/classic:latest
-      macos:
-         xcode: "9.2.0"
       environment:
          WORKDIR: 'workdir'
       steps:
@@ -178,8 +176,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         - macos_selenium
-         #- linux_selenium
+         #- macos_selenium
+         - linux_selenium
          #- run_tests:
          #     requires:
          #        - test_selenium
