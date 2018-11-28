@@ -77,9 +77,9 @@ aliases:
         cd jupyter-vcdat
         git checkout vcdat2.0-sterling
         python setup.py install
-        echo "xxx jupyter labextension install . xxx"
-        jupyter labextension install .
-        echo "xxx jupyter serverextension enable --py vcs_backend xxx"
+        #echo "xxx jupyter labextension install . xxx"
+        #jupyter labextension install .
+        #echo "xxx jupyter serverextension enable --py vcs_backend xxx"
         #jupyter serverextension enable --py vcs_backend
         #jupyter lab --ip='127.0.0.1'
         pip install selenium
