@@ -142,10 +142,9 @@ jobs:
          WORKDIR: 'workdir'
       steps:
          - checkout
-         - run: id
-         - run: npm token create --read-only
+         - run: id         
          - run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
-         - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+         #- run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
          - run: cat ~/.npmrc
          - run: *prepare_firefox
          - run: *setup_miniconda 
