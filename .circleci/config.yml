@@ -179,8 +179,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         - macos_selenium
-         #- linux_selenium
+         #- macos_selenium
+         - linux_selenium
          #- run_tests:
          #     requires:
          #        - test_selenium
