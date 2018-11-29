@@ -149,8 +149,11 @@ jobs:
       steps:
          - checkout
          - run: id
+         - run: npm -v
          - run: npm update npm -g
-         - run: npm set registry https://registry.npmjs.org       
+         - run: npm -v
+         - run: npm set registry https://registry.npmjs.org
+         - run: npm install       
          #- run: npm set registry https://registry.npmjs.org     
          #- run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
          #- run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
