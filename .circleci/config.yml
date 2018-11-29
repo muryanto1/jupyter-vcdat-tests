@@ -134,7 +134,7 @@ aliases:
      name: update_npm
      command: |
         sudo npm update npm -g
-	sudo npm set registry https://registry.npmjs.org
+        sudo npm set registry https://registry.npmjs.org
 
 jobs:
    linux_selenium:
