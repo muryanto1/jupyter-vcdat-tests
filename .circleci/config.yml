@@ -162,9 +162,9 @@ jobs:
          - checkout
          - run: id
          - run: *setup_miniconda 
-         - run: *setup_jupyter_vcdat
-         - run: *run_jupyter_vcdat
-         - run: *run_selenium_tests
+         #- run: *setup_jupyter_vcdat
+         #- run: *run_jupyter_vcdat
+         #- run: *run_selenium_tests
 
    run_tests:
       machine:
