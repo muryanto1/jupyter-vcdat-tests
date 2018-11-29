@@ -92,7 +92,7 @@ aliases:
      command: |
         pwd
         ls
-        echo "xxx ls $WORKDIR xxx"
+        echo "xxxx ls $WORKDIR xxx"
         ls $WORKDIR
         export PATH=$WORKDIR/miniconda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False

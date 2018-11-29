@@ -51,10 +51,15 @@ class MainPage(BasePage):
         time.sleep(self._delay)
         print("xxx AFTER double clicking on file name xxx")
 
+        # this may be TEMPORARY -- check if 'File Load Error for clt.nc' pop up is temporary
+        print("...click on the File Load Error for clt.nc OK button -- is this TEMPORARY?")
+        self.driver.find_element_by_xpath(self._file_load_error_ok_locator).click()
+        time.sleep(self._delay)
+
         # TESTING
-        print("xxx see if we can find this temp pop up locator xxx")
-        self.driver.find_element_by_xpath(self._temp_select_popup_locator)
-        print("xxx FOUND it xxx")
+        #print("xxx see if we can find this temp pop up locator xxx")
+        #self.driver.find_element_by_xpath(self._temp_select_popup_locator)
+        #print("xxx FOUND it xxx")
 
         # validate that we have 'Select Kernel' pop up
         self.driver.find_element_by_xpath(self._select_kernel_popup_locator)
@@ -75,6 +80,6 @@ class MainPage(BasePage):
         time.sleep(self._delay)
 
         # this may be TEMPORARY -- check if 'File Load Error for clt.nc' pop up is temporary
-        print("...click on the File Load Error for clt.nc OK button -- is this TEMPORARY?")
-        self.driver.find_element_by_xpath(self._file_load_error_ok_locator).click()
-        time.sleep(self._delay)
+        #print("...click on the File Load Error for clt.nc OK button -- is this TEMPORARY?")
+        #self.driver.find_element_by_xpath(self._file_load_error_ok_locator).click()
+        #time.sleep(self._delay)
