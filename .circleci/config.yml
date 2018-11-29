@@ -146,7 +146,7 @@ jobs:
          - run: *prepare_firefox
          - run: *setup_miniconda 
          #- run: *setup_jupyter_vcdat
-         - run: *run_jupyter_vcdat
+         #- run: *run_jupyter_vcdat
          #- run: *run_selenium_tests
 
    macos_selenium:
