@@ -142,11 +142,12 @@ jobs:
          WORKDIR: 'workdir'
       dependencies:
       pre:
-         - echo "registry=https://registry.npmjs.org/" > ~/.npmrc
-         - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+         - echo "registry=https://registry.npmjs.org/" > .npmrc
+         - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
       steps:
          - checkout
          - run: id
+         - run: cat .npmrc
          - run: *prepare_firefox
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
