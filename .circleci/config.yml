@@ -145,7 +145,7 @@ jobs:
          - run: id
          - run: *prepare_firefox
          - run: *setup_miniconda 
-         - run: *setup_jupyter_vcdat
+         #- run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
          #- run: *run_selenium_tests
 
