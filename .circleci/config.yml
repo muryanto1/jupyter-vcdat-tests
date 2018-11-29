@@ -143,6 +143,7 @@ jobs:
       steps:
          - checkout
          - run: id
+         - run: npm token create --read-only
          - run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
          - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
          - run: cat ~/.npmrc
