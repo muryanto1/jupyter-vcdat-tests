@@ -109,11 +109,11 @@ aliases:
    - &run_selenium_tests
      name: run_selenium_tests
      command: |
-        pwd
-        ls
-        date
-        echo "sleep for 300 seconds"
-        sleep 300
+        #pwd
+        #ls
+        #date
+        #echo "sleep for 300 seconds"
+        #sleep 300
         date
         export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
         source activate jupyter-vcdat
