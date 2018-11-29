@@ -134,7 +134,8 @@ aliases:
      name: update_npm
      command: |
         sudo npm update npm -g
-	sudo npm set registry https://registry.npmjs.org     
+	sudo npm set registry https://registry.npmjs.org
+
 jobs:
    linux_selenium:
       #docker:
@@ -147,7 +148,8 @@ jobs:
          WORKDIR: 'workdir'
       steps:
          - checkout
-         - run: id 
+         - run: id
+         - run: *npm_update 
          #- run: npm set registry https://registry.npmjs.org     
          #- run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
          #- run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
