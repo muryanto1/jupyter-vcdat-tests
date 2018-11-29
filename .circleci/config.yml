@@ -140,13 +140,11 @@ jobs:
          image: circleci/classic:latest
       environment:
          WORKDIR: 'workdir'
-      dependencies:
-      pre:
-         - echo "registry=https://registry.npmjs.org/" > .npmrc
-         - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
       steps:
          - checkout
          - run: id
+         - run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
+         - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
          - run: cat .npmrc
          - run: *prepare_firefox
          - run: *setup_miniconda 
