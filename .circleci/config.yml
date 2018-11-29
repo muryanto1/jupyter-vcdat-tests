@@ -77,10 +77,10 @@ aliases:
         cd jupyter-vcdat
         git checkout vcdat2.0-sterling
         python setup.py install
-        #echo "xxx jupyter labextension install . xxx"
-        #jupyter labextension install .
-        #echo "xxx jupyter serverextension enable --py vcs_backend xxx"
-        #jupyter serverextension enable --py vcs_backend
+        echo "xxx jupyter labextension install . xxx"
+        jupyter labextension install .
+        echo "xxx jupyter serverextension enable --py vcs_backend xxx"
+        jupyter serverextension enable --py vcs_backend
         #jupyter lab --ip='127.0.0.1'
         pip install selenium
         pip install requests
@@ -153,7 +153,6 @@ jobs:
          - run: npm update npm -g
          - run: npm -v
          - run: npm set registry https://registry.npmjs.org
-         - run: npm install       
          #- run: npm set registry https://registry.npmjs.org     
          #- run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
          #- run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
