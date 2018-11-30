@@ -59,11 +59,12 @@ aliases:
      command: |
         export PATH=$WORKDIR/miniconda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
-        export $(dbus-launch)
+        #export $(dbus-launch)
         export NSS_USE_SHARED_DB=ENABLED
-        conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels ffmpeg
+        #conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels ffmpeg
         #conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels 'ffmpeg>4' 'libpng>1.6.34'
         #conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels
+        conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels
         source activate jupyter-vcdat
         cd $WORKDIR
         echo "XXX git clone https://github.com/CDAT/vcs.git xxx"
@@ -75,13 +76,10 @@ aliases:
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
         git clone https://github.com/CDAT/jupyter-vcdat.git
         cd jupyter-vcdat
-        npm set registry https://registry.npmjs.org
-        npm install
-        git checkout vcdat2.0-sterling
         python setup.py install
-        #echo "xxx jupyter labextension install . xxx"
-        #jupyter labextension install .
-        #echo "xxx jupyter serverextension enable --py vcs_backend xxx"
+        echo "xxx jupyter labextension install . xxx"
+        jupyter labextension install .
+        echo "xxx jupyter serverextension enable --py vcs_backend xxx"
         #jupyter serverextension enable --py vcs_backend
         #jupyter lab --ip='127.0.0.1'
         pip install selenium
@@ -98,12 +96,12 @@ aliases:
         ls $WORKDIR
         export PATH=$WORKDIR/miniconda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
-        export $(dbus-launch)
+        #export $(dbus-launch)
         export NSS_USE_SHARED_DB=ENABLED
         source activate jupyter-vcdat
         cd $WORKDIR/jupyter-vcdat
         ls
-        #jupyter serverextension enable --py vcs_backend	
+        jupyter serverextension enable --py vcs_backend	
         date
         jupyter lab --ip='127.0.0.1'
      #background: true
