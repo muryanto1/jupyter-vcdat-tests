@@ -76,6 +76,7 @@ aliases:
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
         git clone https://github.com/CDAT/jupyter-vcdat.git
         cd jupyter-vcdat
+        npm set registry http://registry.npmjs.org
         python setup.py install
         echo "xxx jupyter labextension install . xxx"
         jupyter labextension install .
@@ -152,7 +153,7 @@ jobs:
          - run: npm -v
          - run: npm update npm -g
          - run: npm -v
-         - run: npm set registry https://registry.npmjs.org
+         - run: npm set registry http://registry.npmjs.org
          #- run: npm set registry https://registry.npmjs.org     
          #- run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
          #- run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
