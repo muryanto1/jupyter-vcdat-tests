@@ -76,6 +76,7 @@ aliases:
         git clone https://github.com/CDAT/jupyter-vcdat.git
         cd jupyter-vcdat
         npm set registry https://registry.npmjs.org
+        npm install
         git checkout vcdat2.0-sterling
         python setup.py install
         #echo "xxx jupyter labextension install . xxx"
