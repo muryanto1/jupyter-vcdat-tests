@@ -64,9 +64,13 @@ aliases:
         #conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels ffmpeg
         #conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels 'ffmpeg>4' 'libpng>1.6.34'
         #conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels
+        #conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels
         conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels
         source activate jupyter-vcdat
         cd $WORKDIR
+        pip install sidecar
+        jupyter labextension install @jupyter-widgets/jupyterlab-manager
+        jupyter labextension install @jupyter-widgets/jupyterlab-sidecar
         echo "XXX git clone https://github.com/CDAT/vcs.git xxx"
         git clone https://github.com/CDAT/vcs.git
         cd vcs
@@ -76,15 +80,10 @@ aliases:
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
         git clone https://github.com/CDAT/jupyter-vcdat.git
         cd jupyter-vcdat
-        npm set registry http://registry.npmjs.org
+        git checkout vcdat2.0-sterling
         python setup.py install
-        echo "xxx jupyter labextension install . xxx"
-        jupyter labextension install .
-        echo "xxx jupyter serverextension enable --py vcs_backend xxx"
-        #jupyter serverextension enable --py vcs_backend
-        #jupyter lab --ip='127.0.0.1'
         pip install selenium
-        pip install requests
+        #pip install requests
         pip install pytest
         cd ..
 
@@ -102,10 +101,9 @@ aliases:
         source activate jupyter-vcdat
         cd $WORKDIR/jupyter-vcdat
         ls
-        jupyter serverextension enable --py vcs_backend	
         date
         jupyter lab --ip='127.0.0.1'
-     #background: true
+     background: true
 
    - &run_selenium_tests
      name: run_selenium_tests
