@@ -61,7 +61,7 @@ aliases:
         export CDAT_ANONYMOUS_LOG=False
         #export $(dbus-launch)
         export NSS_USE_SHARED_DB=ENABLED
-        conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels "ffmpeg>4"
+        conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels $FFMPEG
         source activate jupyter-vcdat
         cd $WORKDIR
         pip install sidecar
@@ -141,6 +141,7 @@ jobs:
          image: circleci/classic:latest
       environment:
          WORKDIR: 'workdir'
+         FFMPEG: 'ffmpeg'
       steps:
          - checkout
          - run: id
@@ -167,6 +168,7 @@ jobs:
          xcode: "10.1.0"
       environment:
          WORKDIR: 'workdir'
+         FFMPEG: "ffmpeg>4"
       steps:
          - checkout
          - run: id
