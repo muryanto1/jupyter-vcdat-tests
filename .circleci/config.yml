@@ -176,6 +176,15 @@ jobs:
          - run: npm update npm -g
          - run: npm -v
          - run: npm set registry http://registry.npmjs.org
+         - brew update; brew cleanup; brew cask cleanup
+         - brew uninstall --force brew-cask; brew update
+         - brew install brew-cask
+         - brew install homebrew/versions/node010
+         - curl https://install.meteor.com | sh
+         - brew cask install google-chrome
+         - brew install chromedriver
+         - chromedriver --port=9515:
+           background: true
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
