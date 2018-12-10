@@ -177,6 +177,7 @@ jobs:
          FFMPEG: "ffmpeg>4"
       steps:
          - checkout
+         - run: which chromedriver
          - run: id
          - run: npm -v
          - run: npm update npm -g
@@ -204,8 +205,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         #- macos_selenium
-         - linux_selenium
+         - macos_selenium
+         #- linux_selenium
          #- run_tests:
          #     requires:
          #        - test_selenium
