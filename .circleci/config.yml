@@ -172,6 +172,10 @@ jobs:
       steps:
          - checkout
          - run: id
+         - run: npm -v
+         - run: npm update npm -g
+         - run: npm -v
+         - run: npm set registry http://registry.npmjs.org
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
