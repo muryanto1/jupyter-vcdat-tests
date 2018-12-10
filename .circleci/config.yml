@@ -88,7 +88,7 @@ aliases:
      command: |
         pwd
         ls
-        echo "xxxx ls $WORKDIR xxx"
+        echo "xxx ls $WORKDIR xxx"
         ls $WORKDIR
         export PATH=$WORKDIR/miniconda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
@@ -107,8 +107,8 @@ aliases:
         #pwd
         #ls
         #date
-        #echo "sleep for 300 seconds"
-        #sleep 300
+        echo "sleep for 60 seconds"
+        sleep 60
         date
         export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
         source activate jupyter-vcdat
