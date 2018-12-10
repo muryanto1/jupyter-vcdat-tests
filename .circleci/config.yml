@@ -184,8 +184,8 @@ jobs:
          - run: npm set registry http://registry.npmjs.org
          - run: brew update
          - run: brew cleanup
-         - run: brew cask cleanup
-         - run: brew uninstall --force brew-cask; brew update
+         - run: brew uninstall --force brew-cask
+         - run: brew update
          - run: brew install brew-cask
          - run: brew install homebrew/versions/node010
          - run: curl https://install.meteor.com | sh
