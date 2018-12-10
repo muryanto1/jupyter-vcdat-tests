@@ -83,7 +83,9 @@ aliases:
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
         git clone https://github.com/CDAT/jupyter-vcdat.git
         cd jupyter-vcdat
-        git checkout vcdat2.0-sterling
+        git checkout vcdat2.0-sterling-npm
+        npm install
+        npm run build
         python setup.py install
         pip install selenium
         #pip install requests
@@ -189,8 +191,6 @@ jobs:
          - run: npm update npm -g
          - run: npm -v
          - run: npm set registry http://registry.npmjs.org
-         - run: npm install 
-         - run: npm run build
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
