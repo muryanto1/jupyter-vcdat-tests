@@ -182,11 +182,11 @@ jobs:
       environment:
          WORKDIR: 'workdir'
          FFMPEG: "ffmpeg>4"
+         TEMP: "/tmp"
       steps:
          - checkout
          - run: *install_chromedriver_on_macos
          - run: which chromedriver
-         - run: echo "TEMP: $TEMP"
          - run: id
          - run: npm -v
          - run: npm update npm -g
