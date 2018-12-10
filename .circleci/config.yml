@@ -83,7 +83,7 @@ aliases:
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
         git clone https://github.com/CDAT/jupyter-vcdat.git
         cd jupyter-vcdat
-        git checkout vcdat2.0-sterling
+        git checkout vcdat2.0-sterling-npm
         python setup.py install
         pip install selenium
         #pip install requests
