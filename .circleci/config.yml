@@ -83,6 +83,12 @@ aliases:
         pip install pytest
         cd ..
 
+   - &run_chromedriver
+     name: run_chromedriver
+     command: |
+        chromedriver --port=9515:
+     background: true
+
    - &run_jupyter_vcdat
      name: run_jupyter_vcdat
      command: |
@@ -176,18 +182,19 @@ jobs:
          - run: npm update npm -g
          - run: npm -v
          - run: npm set registry http://registry.npmjs.org
-         - brew update; brew cleanup; brew cask cleanup
-         - brew uninstall --force brew-cask; brew update
-         - brew install brew-cask
-         - brew install homebrew/versions/node010
-         - curl https://install.meteor.com | sh
-         - brew cask install google-chrome
-         - brew install chromedriver
-         - chromedriver --port=9515:
-           background: true
+         - run: brew update
+         - run: brew cleanup
+         - run: brew cask cleanup
+         - run: brew uninstall --force brew-cask; brew update
+         - run: brew install brew-cask
+         - run: brew install homebrew/versions/node010
+         - run: curl https://install.meteor.com | sh
+         - run: brew cask install google-chrome
+         - run: brew install chromedriver
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
+         - run: *run_chromedriver
          - run: *run_selenium_tests
 
    run_tests:
