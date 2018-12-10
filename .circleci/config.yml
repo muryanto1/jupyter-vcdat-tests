@@ -83,7 +83,7 @@ aliases:
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
         git clone https://github.com/CDAT/jupyter-vcdat.git
         cd jupyter-vcdat
-        git checkout vcdat2.0-sterling-npm
+        git checkout vcdat2.0-sterling
         python setup.py install
         pip install selenium
         #pip install requests
@@ -162,9 +162,6 @@ jobs:
          - run: npm update npm -g
          - run: npm -v
          - run: npm set registry http://registry.npmjs.org
-         #- run: npm set registry https://registry.npmjs.org     
-         #- run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
-         #- run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
          - run: cat ~/.npmrc
          #- run: *prepare_firefox
          - run: *setup_miniconda 
@@ -192,6 +189,8 @@ jobs:
          - run: npm update npm -g
          - run: npm -v
          - run: npm set registry http://registry.npmjs.org
+         - run: npm install 
+         - run: npm run build
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
