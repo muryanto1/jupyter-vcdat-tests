@@ -159,7 +159,7 @@ jobs:
          #- run: echo "registry=https://registry.npmjs.org/" > ~/.npmrc
          #- run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
          - run: cat ~/.npmrc
-         - run: *prepare_firefox
+         #- run: *prepare_firefox
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
@@ -204,8 +204,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         - macos_selenium
-         #- linux_selenium
+         #- macos_selenium
+         - linux_selenium
          #- run_tests:
          #     requires:
          #        - test_selenium
