@@ -83,14 +83,15 @@ aliases:
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
         git clone https://github.com/CDAT/jupyter-vcdat.git
         cd jupyter-vcdat
-        git checkout vcdat2.0-sterling-npm
-        npm install
-        npm run build
+        git checkout vcdat2.0-sterling
+        #npm install
+        #npm run build
         python setup.py install
         pip install selenium
         #pip install requests
         pip install pytest
         cd ..
+     no_output_timeout: 30m
 
    - &run_chromedriver
      name: run_chromedriver
