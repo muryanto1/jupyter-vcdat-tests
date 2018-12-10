@@ -173,9 +173,9 @@ jobs:
          - checkout
          - run: id
          - run: *setup_miniconda 
-         #- run: *setup_jupyter_vcdat
-         #- run: *run_jupyter_vcdat
-         #- run: *run_selenium_tests
+         - run: *setup_jupyter_vcdat
+         - run: *run_jupyter_vcdat
+         - run: *run_selenium_tests
 
    run_tests:
       machine:
@@ -190,8 +190,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         #- macos_selenium
-         - linux_selenium
+         - macos_selenium
+         #- linux_selenium
          #- run_tests:
          #     requires:
          #        - test_selenium
