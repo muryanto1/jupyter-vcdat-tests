@@ -43,7 +43,8 @@ aliases:
      name: install_chromedriver_on_macos
      command: |
         brew update
-        brew install chromedriver
+        brew tap homebrew/cask
+        brew cask install chromedriver
 
    - &download_selenium
      name: download_selenium
