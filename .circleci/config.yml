@@ -2,11 +2,12 @@ version: 2
 
 aliases:
 
-   - &setup_miniconda
-    name: setup_miniconda
+   - &setup_anaconda
+    name: setup_anaconda
     command: |
-      git clone -b validateNightly --depth 1 git@github.com:CDAT/cdat $WORKDIR/cdat
-      python $WORKDIR/cdat/scripts/install_miniconda.py -w $WORKDIR -p 'py3'
+       cd $WORKDIR
+       curl https://repo.continuum.io/archive/Anaconda3-5.3.0-MacOSX-x86_64.sh -o anaconda3.sh
+       bash ./anaconda3.sh -b -p conda
 
    - &prepare_firefox
      name: prepare_firefox
@@ -30,7 +31,7 @@ aliases:
      name: setup_for_selenium_tests
      command: |
         echo "xxx setup_for_selenium_tests xxx"
-        export PATH=$WORKDIR/miniconda/bin:$PATH
+        export PATH=$WORKDIR/conda/bin:$PATH
         type python
         python -m venv venv
         . venv/bin/activate
@@ -64,7 +65,7 @@ aliases:
    - &setup_jupyter_vcdat
      name: setup_jupyter_vcdat
      command: |
-        export PATH=$WORKDIR/miniconda/bin:$PATH
+        export PATH=$WORKDIR/conda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
         #export $(dbus-launch)
         export NSS_USE_SHARED_DB=ENABLED
@@ -106,7 +107,7 @@ aliases:
         ls
         echo "xxx ls $WORKDIR xxx"
         ls $WORKDIR
-        export PATH=$WORKDIR/miniconda/bin:$PATH
+        export PATH=$WORKDIR/conda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
         #export $(dbus-launch)
         export NSS_USE_SHARED_DB=ENABLED
@@ -126,7 +127,7 @@ aliases:
         echo "sleep for 60 seconds"
         sleep 60
         date
-        export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
+        export PATH=$WORKDIR/conda/envs/jupyter-vcdat/bin:$WORKDIR/conda/bin:/usr/local/bin:$PATH
         source activate jupyter-vcdat
         pytest -s -v tests/test_variable.py
 
@@ -211,8 +212,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         #- macos_selenium
-         - linux_selenium
+         - macos_selenium
+         #- linux_selenium
          #- run_tests:
          #     requires:
          #        - test_selenium
