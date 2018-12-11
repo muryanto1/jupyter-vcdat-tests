@@ -168,7 +168,7 @@ jobs:
          - run: npm set registry http://registry.npmjs.org
          - run: cat ~/.npmrc
          - run: *prepare_firefox
-         - run: *setup_miniconda 
+         - run: *setup_anaconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
          - run: *run_selenium_tests
@@ -193,7 +193,7 @@ jobs:
          - run: npm update npm -g
          - run: npm -v
          - run: npm set registry http://registry.npmjs.org
-         - run: *setup_miniconda 
+         - run: *setup_anaconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
          - run: *run_chromedriver
