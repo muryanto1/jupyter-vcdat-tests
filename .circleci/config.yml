@@ -74,10 +74,13 @@ aliases:
      command: |
         export PATH=$WORKDIR/miniconda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
-        export $(dbus-launch)
-        export NSS_USE_SHARED_DB=ENABLED
+        #export $(dbus-launch)
+        #export NSS_USE_SHARED_DB=ENABLED
         conda create -n jupyter-vcdat -c cdat/label/nightly -c conda-forge -c cdat -c anaconda nodejs "python>3" vcs jupyterlab pip nb_conda nb_conda_kernels $FFMPEG
         source activate jupyter-vcdat
+        pip install sidecar
+        jupyter labextension install @jupyter-widgets/jupyterlab-manager
+        jupyter labextension install @jupyter-widgets/jupyterlab-sidecar
         cd $WORKDIR
         echo "XXX git clone https://github.com/CDAT/vcs.git xxx"
         git clone https://github.com/CDAT/vcs.git
@@ -92,9 +95,6 @@ aliases:
         #npm install
         #npm run build
         python setup.py install
-        pip install sidecar
-        jupyter labextension install @jupyter-widgets/jupyterlab-manager
-        jupyter labextension install @jupyter-widgets/jupyterlab-sidecar
         pip install selenium
         #pip install requests
         pip install pytest
@@ -181,10 +181,6 @@ jobs:
          - run: *run_selenium_tests
 
    macos_selenium:
-      #docker:
-         #- image: selenium/standalone-chrome:3.1.0
-         #- image: circleci/python:3.6.2-stretch-browsers
-         #- image: muryanto1/centos_for_jupyter_vcdat
       macos:
          xcode: "10.1.0"
       environment:
@@ -196,10 +192,10 @@ jobs:
          - run: *install_chromedriver_on_macos
          - run: which chromedriver
          - run: id
-         - run: npm -v
-         - run: npm update npm -g
-         - run: npm -v
-         - run: npm set registry http://registry.npmjs.org
+         #- run: npm -v
+         #- run: npm update npm -g
+         #- run: npm -v
+         #- run: npm set registry http://registry.npmjs.org
          - run: *setup_miniconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
@@ -219,8 +215,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         #- macos_selenium
-         - linux_selenium
+         - macos_selenium
+         #- linux_selenium
          #- run_tests:
          #     requires:
          #        - test_selenium
