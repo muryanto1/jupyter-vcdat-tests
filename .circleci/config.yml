@@ -77,7 +77,7 @@ aliases:
         echo "XXX git clone https://github.com/CDAT/vcs.git xxx"
         git clone https://github.com/CDAT/vcs.git
         cd vcs
-        git checkout boxfill_widgets_jupyter
+        ##git checkout boxfill_widgets_jupyter
         python setup.py install
         cd ..
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
