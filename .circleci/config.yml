@@ -38,7 +38,7 @@ aliases:
      name: setup_for_selenium_tests
      command: |
         echo "xxx setup_for_selenium_tests xxx"
-        export PATH=$WORKDIR/miniconda/bin:$PATH
+        export PATH=$WORKDIR/anaconda/bin:$PATH
         type python
         python -m venv venv
         . venv/bin/activate
@@ -72,7 +72,7 @@ aliases:
    - &setup_jupyter_vcdat
      name: setup_jupyter_vcdat
      command: |
-        export PATH=$WORKDIR/miniconda/bin:$PATH
+        export PATH=$WORKDIR/anaconda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
         #export $(dbus-launch)
         #export NSS_USE_SHARED_DB=ENABLED
@@ -114,7 +114,7 @@ aliases:
         ls
         echo "xxx ls $WORKDIR xxx"
         ls $WORKDIR
-        export PATH=$WORKDIR/miniconda/bin:$PATH
+        export PATH=$WORKDIR/anaconda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
         #export $(dbus-launch)
         export NSS_USE_SHARED_DB=ENABLED
@@ -128,13 +128,10 @@ aliases:
    - &run_selenium_tests
      name: run_selenium_tests
      command: |
-        #pwd
-        #ls
-        #date
         echo "sleep for 60 seconds"
         sleep 60
         date
-        export PATH=$WORKDIR/miniconda/envs/jupyter-vcdat/bin:$WORKDIR/miniconda/bin:/usr/local/bin:$PATH
+        export PATH=$WORKDIR/anaconda/envs/jupyter-vcdat/bin:$WORKDIR/anaconda/bin:/usr/local/bin:$PATH
         source activate jupyter-vcdat
         pytest -s -v tests/test_variable.py
 
@@ -175,7 +172,7 @@ jobs:
          - run: npm set registry http://registry.npmjs.org
          - run: cat ~/.npmrc
          - run: *prepare_firefox
-         - run: *setup_miniconda 
+         - run: *setup_anaconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
          - run: *run_selenium_tests
@@ -192,11 +189,11 @@ jobs:
          - run: *install_chromedriver_on_macos
          - run: which chromedriver
          - run: id
-         #- run: npm -v
-         #- run: npm update npm -g
-         #- run: npm -v
-         #- run: npm set registry http://registry.npmjs.org
-         - run: *setup_miniconda 
+         - run: npm -v
+         - run: npm update npm -g
+         - run: npm -v
+         - run: npm set registry http://registry.npmjs.org
+         - run: *setup_anaconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
          - run: *run_chromedriver
