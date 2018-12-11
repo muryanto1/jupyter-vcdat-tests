@@ -5,6 +5,7 @@ aliases:
    - &setup_anaconda
     name: setup_anaconda
     command: |
+       mkdir $WORKDIR
        cd $WORKDIR
        curl https://repo.continuum.io/archive/Anaconda3-5.3.0-MacOSX-x86_64.sh -o anaconda3.sh
        bash ./anaconda3.sh -b -p conda
