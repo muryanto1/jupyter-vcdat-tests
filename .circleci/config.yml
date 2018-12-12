@@ -170,8 +170,9 @@ jobs:
          - run: npm update npm -g
          - run: npm -v
          - run: npm set registry http://registry.npmjs.org
+         - run: npm install -g yarn
          - run: cat ~/.npmrc
-         - run: *prepare_firefox
+         #- run: *prepare_firefox
          - run: *setup_anaconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
@@ -238,8 +239,8 @@ workflows:
    version: 2
    browser_tests:
       jobs:
-         - macos_selenium
-         #- linux_selenium
+         #- macos_selenium
+         - linux_selenium
          #- run_tests:
          #     requires:
          #        - test_selenium
