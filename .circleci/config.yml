@@ -186,7 +186,7 @@ jobs:
          TEMP: "/tmp"
       steps:
          - checkout
-         - run: which chrome
+         - run: which google-chrome
          - run: *install_chromedriver_on_macos
          - run: which chromedriver
          - run: id
