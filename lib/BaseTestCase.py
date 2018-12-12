@@ -25,8 +25,8 @@ class BaseTestCase(unittest.TestCase):
         self._download_dir = tempfile.mkdtemp()
         print("...download_dir: {d}".format(d=self._download_dir))
         options = Options()
-        options.add_argument("--headless")
-        #options.add_argument("--foreground")
+        #options.add_argument("--headless")
+        options.add_argument("--foreground")
         # TEMPORARY
         browser = 'chrome'
         #browser = 'firefox'
@@ -35,7 +35,8 @@ class BaseTestCase(unittest.TestCase):
             chrome_options = webdriver.ChromeOptions()
             chrome_options.add_argument("--disable-popup-blocking")
             chrome_options.add_argument("--start-maximized")
-            chrome_options.add_argument("--headless")
+            #chrome_options.add_argument("--headless")
+            chrome_options.add_argument("--foreground")
             preferences = {"download.default_directory": self._download_dir,
                            "directory_upgrade": True,
                            "safebrowsing.enabled": True,
