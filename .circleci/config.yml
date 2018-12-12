@@ -205,6 +205,7 @@ jobs:
 
    docker_selenium:
       docker:
+         - image: circleci/node:jessie-browsers
          - image: circleci/python:3.6.2-stretch-browsers
          - image: selenium/standalone-chrome:3.5.1
       environment:
@@ -216,12 +217,7 @@ jobs:
          - run: which google-chrome
          - run: which chromedriver
          - run: id
-         - run: npm -v
-         - run: npm update npm -g
-         - run: npm -v
-         - run: npm set registry http://registry.npmjs.org
-         - run: npm install -g yarn
-         - run: *setup_anaconda 
+         - run: *setup_miniconda
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
          #- run: *run_chromedriver
