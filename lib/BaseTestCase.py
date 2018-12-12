@@ -35,8 +35,8 @@ class BaseTestCase(unittest.TestCase):
             chrome_options = webdriver.ChromeOptions()
             chrome_options.add_argument("--disable-popup-blocking")
             chrome_options.add_argument("--start-maximized")
-            #chrome_options.add_argument("--headless")
-            chrome_options.add_argument("--foreground")
+            chrome_options.add_argument("--headless")
+            #chrome_options.add_argument("--foreground")
             preferences = {"download.default_directory": self._download_dir,
                            "directory_upgrade": True,
                            "safebrowsing.enabled": True,
