@@ -197,7 +197,7 @@ jobs:
          - run: *setup_anaconda 
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
-         - run: *run_chromedriver
+         #- run: *run_chromedriver
          - run: *run_selenium_tests
 
    run_tests:
