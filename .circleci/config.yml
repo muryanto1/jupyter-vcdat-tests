@@ -8,7 +8,7 @@ aliases:
        mkdir $WORKDIR
        cd $WORKDIR
        curl https://repo.continuum.io/archive/Anaconda3-5.3.0-MacOSX-x86_64.sh -o anaconda3.sh
-       bash ./anaconda3.sh -b -p anaconda
+       bash ./anaconda3.sh -b -p conda
 
    - &setup_miniconda
     name: setup_miniconda
@@ -38,7 +38,7 @@ aliases:
      name: setup_for_selenium_tests
      command: |
         echo "xxx setup_for_selenium_tests xxx"
-        export PATH=$WORKDIR/anaconda/bin:$PATH
+        export PATH=$WORKDIR/conda/bin:$PATH
         type python
         python -m venv venv
         . venv/bin/activate
@@ -72,7 +72,7 @@ aliases:
    - &setup_jupyter_vcdat
      name: setup_jupyter_vcdat
      command: |
-        export PATH=$WORKDIR/anaconda/bin:$PATH
+        export PATH=$WORKDIR/conda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
         #export $(dbus-launch)
         #export NSS_USE_SHARED_DB=ENABLED
@@ -114,7 +114,7 @@ aliases:
         ls
         echo "xxx ls $WORKDIR xxx"
         ls $WORKDIR
-        export PATH=$WORKDIR/anaconda/bin:$PATH
+        export PATH=$WORKDIR/conda/bin:$PATH
         export CDAT_ANONYMOUS_LOG=False
         #export $(dbus-launch)
         export NSS_USE_SHARED_DB=ENABLED
@@ -131,7 +131,7 @@ aliases:
         echo "sleep for 60 seconds"
         sleep 60
         date
-        export PATH=$WORKDIR/anaconda/envs/jupyter-vcdat/bin:$WORKDIR/anaconda/bin:/usr/local/bin:$PATH
+        export PATH=$WORKDIR/conda/envs/jupyter-vcdat/bin:$WORKDIR/conda/bin:/usr/local/bin:$PATH
         source activate jupyter-vcdat
         pytest -s -v tests/test_variable.py
 
