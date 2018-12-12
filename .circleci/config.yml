@@ -206,6 +206,7 @@ jobs:
    docker_selenium:
       docker:
          - image: circleci/python:3.6.2-stretch-browsers
+         - image: selenium/standalone-chrome:3.5.1
       environment:
          WORKDIR: 'workdir'
          FFMPEG: "ffmpeg>4"
@@ -213,7 +214,6 @@ jobs:
       steps:
          - checkout
          - run: which google-chrome
-         - run: *install_chromedriver_on_macos
          - run: which chromedriver
          - run: id
          - run: npm -v
