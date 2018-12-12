@@ -91,7 +91,7 @@ aliases:
         echo "xxx git clone https://github.com/CDAT/jupyter-vcdat.git xxx"
         git clone https://github.com/CDAT/jupyter-vcdat.git
         cd jupyter-vcdat
-        git checkout vcdat2.0-sterling-npm
+        git checkout vcdat2.0-sterling
         #npm install
         #npm run build
         python setup.py install
@@ -212,7 +212,7 @@ jobs:
          TEMP: "/tmp"
       steps:
          - checkout
-         - run: which chrome
+         - run: which google-chrome
          - run: *install_chromedriver_on_macos
          - run: which chromedriver
          - run: id
@@ -240,8 +240,9 @@ workflows:
    version: 2
    browser_tests:
       jobs:
+         - docker_selenium
          #- macos_selenium
-         - linux_selenium
+         #- linux_selenium
          #- run_tests:
          #     requires:
          #        - test_selenium
