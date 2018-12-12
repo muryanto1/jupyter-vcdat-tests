@@ -186,6 +186,31 @@ jobs:
          TEMP: "/tmp"
       steps:
          - checkout
+         - run: which chrome
+         - run: *install_chromedriver_on_macos
+         - run: which chromedriver
+         - run: id
+         - run: npm -v
+         - run: npm update npm -g
+         - run: npm -v
+         - run: npm set registry http://registry.npmjs.org
+         - run: npm install -g yarn
+         - run: *setup_anaconda 
+         - run: *setup_jupyter_vcdat
+         - run: *run_jupyter_vcdat
+         #- run: *run_chromedriver
+         - run: *run_selenium_tests
+
+   docker_selenium:
+      docker:
+         - image: circleci/python:3.6.2-stretch-browsers
+      environment:
+         WORKDIR: 'workdir'
+         FFMPEG: "ffmpeg>4"
+         TEMP: "/tmp"
+      steps:
+         - checkout
+         - run: which chrome
          - run: *install_chromedriver_on_macos
          - run: which chromedriver
          - run: id
