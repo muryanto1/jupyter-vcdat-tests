@@ -165,6 +165,7 @@ jobs:
          FFMPEG: 'ffmpeg'
       steps:
          - checkout
+         - run: which google-chrome
          - run: id
          - run: npm -v
          - run: npm update npm -g
@@ -173,7 +174,7 @@ jobs:
          - run: npm install -g yarn
          - run: cat ~/.npmrc
          #- run: *prepare_firefox
-         - run: *setup_anaconda 
+         - run: *setup_miniconda
          - run: *setup_jupyter_vcdat
          - run: *run_jupyter_vcdat
          - run: *run_selenium_tests
