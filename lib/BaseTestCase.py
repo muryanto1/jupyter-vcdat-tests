@@ -29,14 +29,14 @@ class BaseTestCase(unittest.TestCase):
         #options.add_argument("--headless")
         options.add_argument("--foreground")
         # TEMPORARY
-        #browser = 'chrome'
-        browser = 'firefox'
+        browser = 'chrome'
+        #browser = 'firefox'
         mode = "--headless"
-        #mode = "--foreground
-        if mode == "--headless":
-            print("xxx starting display since we are running in headless mode")
-            display = Display(visible=0, size=(800, 600))
-            display.start()
+        #mode = "--foreground"
+        #if mode == "--headless":
+        #    print("xxx starting display since we are running in headless mode")
+        #    display = Display(visible=0, size=(800, 600))
+        #    display.start()
         if browser == 'chrome':
             chrome_options = webdriver.ChromeOptions()
             chrome_options.add_argument("--disable-popup-blocking")
