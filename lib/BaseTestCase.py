@@ -10,6 +10,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver import DesiredCapabilities, Firefox
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+from pyvirtualdisplay import Display
 
 # NEED pytest-testconfig
 #this_dir = os.path.abspath(os.path.dirname(__file__))
@@ -30,16 +31,21 @@ class BaseTestCase(unittest.TestCase):
         # TEMPORARY
         browser = 'chrome'
         #browser = 'firefox'
-
+        mode = "--headless"
+        #mode = "--foreground"
         if browser == 'chrome':
+            if mode == "--headless":
+                print("xxx starting display since we are running in headless mode")
+                display = Display(visible=0, size=(800, 600))
+                display.start()
             chrome_options = webdriver.ChromeOptions()
             chrome_options.add_argument("--disable-popup-blocking")
             chrome_options.add_argument("--start-maximized")
-            chrome_options.add_argument("--headless")
-            #chrome_options.add_argument("--foreground")
+            chrome_options.add_argument(mode)
+
             preferences = {"download.default_directory": self._download_dir,
                            "directory_upgrade": True,
-                           #"safebrowsing.enabled": True,
+                           "safebrowsing.enabled": True,
                            "prompt_for_download": True}
             chrome_options.add_experimental_option("prefs", preferences)
             self.driver = webdriver.Chrome(options=chrome_options)
