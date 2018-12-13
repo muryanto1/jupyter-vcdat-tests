@@ -55,7 +55,7 @@ class MainPage(BasePage):
 
         # this may be TEMPORARY -- check if 'File Load Error for clt.nc' pop up is temporary
         print("...click on the File Load Error for clt.nc OK button -- is this TEMPORARY?")
-        #self.driver.find_element_by_xpath(self._file_load_error_ok_locator).click()
+        self.driver.find_element_by_xpath(self._file_load_error_ok_locator).click()
         file_load_error_element.click()
         print("...FOUND File Load Error for clt.nc ...")
         #time.sleep(self._delay)
