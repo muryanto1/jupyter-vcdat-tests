@@ -24,10 +24,10 @@ class BaseTestCase(unittest.TestCase):
 
         #_download_dir = "/tmp"
         self._download_dir = tempfile.mkdtemp()
-        print("...download_dir: {d}".format(d=self._download_dir))
+        print("x...download_dir: {d}".format(d=self._download_dir))
         options = Options()
-        #options.add_argument("--headless")
-        options.add_argument("--foreground")
+        options.add_argument("--headless")
+        #options.add_argument("--foreground")
         # TEMPORARY
         browser = 'chrome'
         #browser = 'firefox'
