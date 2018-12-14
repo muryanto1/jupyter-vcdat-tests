@@ -25,8 +25,8 @@ class MainPage(BasePage):
     _select_kernel_drop_down_locator = "//select[@class='jp-mod-styled']"
     _kernel_locator = "//option[contains(text(), '{k}')]".format(k=_kernel)
     _kernel_select_button_locator = "//button//div[contains(text(), 'SELECT')]"
-    _file_load_error_ok_locator = "//button[@class='jp-Dialog-button jp-mod-accept jp-mod-styled']"
-
+    #_file_load_error_ok_locator = "//button[@class='jp-Dialog-button jp-mod-accept jp-mod-styled']"
+    _file_load_error_ok_locator = "//button[@class='jp-Dialog-button jp-mod-accept jp-mod-styled']//div[@class='jp-Dialog-buttonIcon']"
 
     def __init__(self, driver, server):
         super(MainPage, self).__init__(driver, server)
@@ -56,7 +56,8 @@ class MainPage(BasePage):
         # this may be TEMPORARY -- check if 'File Load Error for clt.nc' pop up is temporary
         print("...click on the File Load Error for clt.nc OK button -- is this TEMPORARY?")
         #self.driver.find_element_by_xpath(self._file_load_error_ok_locator).click()
-        file_load_error_element.click()
+        #file_load_error_element.click()
+        self.driver.execute_script("arguments[0].click();", file_load_error_element)
         print("...FOUND File Load Error for clt.nc ...")
         #time.sleep(self._delay)
 
