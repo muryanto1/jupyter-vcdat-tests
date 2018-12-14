@@ -51,7 +51,12 @@ class BaseTestCase(unittest.TestCase):
                            "safebrowsing.enabled": True,
                            "prompt_for_download": True}
             chrome_options.add_experimental_option("prefs", preferences)
-            self.driver = webdriver.Chrome(options=chrome_options)
+            #self.driver = webdriver.Chrome(options=chrome_options)
+
+            self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',
+                                           desired_capabilities=DesiredCapabilities.CHROME,
+                                           options=chrome_options)
+
         elif browser == 'firefox':
             firefox_profile = FirefoxProfile() # profile                                                                            
             firefox_profile.set_preference('extensions.logging.enabled', False)
