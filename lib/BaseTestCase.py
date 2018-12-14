@@ -39,9 +39,9 @@ class BaseTestCase(unittest.TestCase):
         #    display.start()
         if browser == 'chrome':
             # temporary for MacOS
-            binary_loc = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+            #binary_loc = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
             chrome_options = webdriver.ChromeOptions()
-            chrome_options.binary_location = binary_loc
+            #chrome_options.binary_location = binary_loc
             chrome_options.add_argument("--disable-popup-blocking")
             chrome_options.add_argument("--start-maximized")
             chrome_options.add_argument(mode)
