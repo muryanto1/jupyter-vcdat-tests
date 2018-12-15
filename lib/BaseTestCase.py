@@ -40,8 +40,8 @@ class BaseTestCase(unittest.TestCase):
         if browser == 'chrome':
             chrome_options = webdriver.ChromeOptions()
             # temporary for MacOS -- need this for macos in circleCI
-            binary_loc = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-            chrome_options.binary_location = binary_loc
+            #binary_loc = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+            #chrome_options.binary_location = binary_loc
             chrome_options.add_argument("--disable-popup-blocking")
             chrome_options.add_argument("--start-maximized")
             chrome_options.add_argument(mode)
