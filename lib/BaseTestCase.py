@@ -31,8 +31,8 @@ class BaseTestCase(unittest.TestCase):
         # TEMPORARY
         browser = 'chrome'
         #browser = 'firefox'
-        mode = "--headless"
-        #mode = "--foreground"
+        #mode = "--headless"
+        mode = "--foreground"
         #if mode == "--headless":
         #    print("xxx starting display since we are running in headless mode")
         #    display = Display(visible=0, size=(800, 600))
