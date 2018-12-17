@@ -29,8 +29,8 @@ class BaseTestCase(unittest.TestCase):
         options.add_argument("--headless")
         #options.add_argument("--foreground")
         # TEMPORARY
-        #browser = 'chrome'
-        browser = 'firefox'
+        browser = 'chrome'
+        #browser = 'firefox'
         #mode = "--headless"
         mode = "--foreground"
         #if mode == "--headless":
