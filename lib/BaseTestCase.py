@@ -52,7 +52,7 @@ class BaseTestCase(unittest.TestCase):
             #               "directory_upgrade": True,
             #               "safebrowsing.enabled": True,
             #               "prompt_for_download": True}
-            chrome_options.add_experimental_option("prefs", preferences)
+            #chrome_options.add_experimental_option("prefs", preferences)
             #self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver",
             #                               chrome_options=chrome_options,
             #                               service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
