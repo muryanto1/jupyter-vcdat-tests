@@ -48,10 +48,10 @@ class BaseTestCase(unittest.TestCase):
             chrome_options.add_argument("--no-sandbox")
             chrome_options.add_argument("window-size=1200x600")
 
-            preferences = {"download.default_directory": self._download_dir,
-                           "directory_upgrade": True,
-                           "safebrowsing.enabled": True,
-                           "prompt_for_download": True}
+            #preferences = {"download.default_directory": self._download_dir,
+            #               "directory_upgrade": True,
+            #               "safebrowsing.enabled": True,
+            #               "prompt_for_download": True}
             chrome_options.add_experimental_option("prefs", preferences)
             #self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver",
             #                               chrome_options=chrome_options,
