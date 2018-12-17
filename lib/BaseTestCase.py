@@ -42,8 +42,8 @@ class BaseTestCase(unittest.TestCase):
             # temporary for MacOS -- need this for macos in circleCI
             #binary_loc = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
             #chrome_options.binary_location = binary_loc
-            chrome_options.add_argument("--disable-popup-blocking")
-            chrome_options.add_argument("--start-maximized")
+            #chrome_options.add_argument("--disable-popup-blocking")
+            #chrome_options.add_argument("--start-maximized")
             chrome_options.add_argument(mode)
             chrome_options.add_argument("--no-sandbox")
             chrome_options.add_argument("window-size=1200x600")
@@ -53,7 +53,7 @@ class BaseTestCase(unittest.TestCase):
                            "safebrowsing.enabled": True,
                            "prompt_for_download": True}
             chrome_options.add_experimental_option("prefs", preferences)
-            self.driver = webdriver.Chrome(driver_path="/usr/local/bin/chromedriver",
+            self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver",
                                            chrome_options=chrome_options,
                                            service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
 
