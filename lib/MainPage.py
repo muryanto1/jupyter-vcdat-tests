@@ -62,7 +62,7 @@ class MainPage(BasePage):
         #time.sleep(self._delay)
         ##self.driver.execute_script("arguments[0].click();", file_load_error_element)
         print("xxx doing WebDriverWait...")
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator))).click()
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator))).click()
 
         # TESTING
         #print("xxx see if we can find this temp pop up locator xxx")
