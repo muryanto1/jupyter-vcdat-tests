@@ -45,7 +45,7 @@ class BrowserTest(BaseTestCase):
         main_page.load_file("clt.nc")
 
         # validate what is displayed in the console
-        console = ConsoleTab(self.driver, 'Console 1')
+        #console = ConsoleTab(self.driver, 'Console 1')
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
