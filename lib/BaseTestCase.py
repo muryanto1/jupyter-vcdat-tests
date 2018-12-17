@@ -45,6 +45,8 @@ class BaseTestCase(unittest.TestCase):
             chrome_options.add_argument("--disable-popup-blocking")
             chrome_options.add_argument("--start-maximized")
             chrome_options.add_argument(mode)
+            chrome_options.add_argument("--no-sandbox")
+            chrome_options.add_argument("window-size=1200x600")
 
             preferences = {"download.default_directory": self._download_dir,
                            "directory_upgrade": True,
@@ -53,7 +55,8 @@ class BaseTestCase(unittest.TestCase):
             chrome_options.add_experimental_option("prefs", preferences)
             #self.driver = webdriver.Chrome(options=chrome_options)
 
-            self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',
+            #self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',
+            self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
                                            desired_capabilities=DesiredCapabilities.CHROME,
                                            options=chrome_options)
 
