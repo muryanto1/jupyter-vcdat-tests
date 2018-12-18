@@ -49,7 +49,8 @@ class MainPage(BasePage):
         actionChains = ActionChains(self.driver)
         actionChains.move_to_element(file_element)
         actionChains.double_click(file_element).perform()
-        time.sleep(self._delay)
+        #time.sleep(self._delay)
+ 
         print("xxx AFTER double clicking on file name xxx")
         #file_load_error_element = self.driver.find_element_by_xpath(self._file_load_error_ok_locator)
         #print("xxx Find 'File Load Error for clt.nc' pop up")
@@ -77,6 +78,7 @@ class MainPage(BasePage):
                 load_el = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator)))
                 print("FOUND file_load_error_ok element, n_tries: {n}".format(n=n_tries))
                 load_el.click()
+                break
             except TimeoutException:
                 n_tries = n_tries + 1
                 if n_tries == 3:
