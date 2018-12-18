@@ -39,10 +39,7 @@ class MainPage(BasePage):
         logo_element = self.driver.find_element_by_id(self._logo_locator)
 
     def load_file(self, fname):
-        # find file folder icon on left panel, and click
-        folder_element = self.driver.find_element_by_xpath(self._file_folder_locator)
-        folder_element.click()
-        time.sleep(self._delay)
+
         
         ## THIS WORKS when run 2nd time
         #WebDriverWait(self.driver, 180).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator))).click()
@@ -50,6 +47,12 @@ class MainPage(BasePage):
         n_tries = 0
         while n_tries < 3:
             try:
+                print("xxx n_tries: {n}".format(n=n_tries))
+                # find file folder icon on left panel, and click
+                folder_element = self.driver.find_element_by_xpath(self._file_folder_locator)
+                folder_element.click()
+                time.sleep(self._delay)
+
                 print("xxx double clicking on file name")
                 file_locator = "//li[@class='jp-DirListing-item'][@title='{f}']".format(f=fname)
                 file_element = self.driver.find_element_by_xpath(file_locator)
