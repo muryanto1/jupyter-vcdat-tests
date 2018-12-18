@@ -52,25 +52,24 @@ class MainPage(BasePage):
         #time.sleep(self._delay)
  
         print("xxx AFTER double clicking on file name xxx")
-        #file_load_error_element = self.driver.find_element_by_xpath(self._file_load_error_ok_locator)
-        #print("xxx Find 'File Load Error for clt.nc' pop up")
 
         # this may be TEMPORARY -- check if 'File Load Error for clt.nc' pop up is temporary
         print("...click on the File Load Error for clt.nc OK button -- is this TEMPORARY?")
-        #self.driver.find_element_by_xpath(self._file_load_error_ok_locator).click()
-        #file_load_error_element.click()
-    
-        #print("...FOUND File Load Error for clt.nc ...")
-        #time.sleep(self._delay)
-        #self.driver.execute_script("arguments[0].click();", file_load_error_element)
         
         ## THIS WORKS when run 2nd time
-        print("xxx doing WebDriverWait...")
         #WebDriverWait(self.driver, 180).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator))).click()
 
         n_tries = 0
         while n_tries < 3:
             try:
+                print("xxx double clicking on file name")
+                file_locator = "//li[@class='jp-DirListing-item'][@title='{f}']".format(f=fname)
+                file_element = self.driver.find_element_by_xpath(file_locator)
+                actionChains = ActionChains(self.driver)
+                actionChains.move_to_element(file_element)
+                actionChains.double_click(file_element).perform()
+
+                print("xxx doing WebDriverWait...")
                 load_el_present = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, self._file_load_error_ok_locator)))
                 print("file_load_error_ok is present, n_tries: {n}".format(n=n_tries))
                 load_el_visible = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, self._file_load_error_ok_locator)))
