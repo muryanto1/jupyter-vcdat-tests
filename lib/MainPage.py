@@ -38,36 +38,31 @@ class MainPage(BasePage):
         print("...MainPage.validatePage()")
         logo_element = self.driver.find_element_by_id(self._logo_locator)
 
-    def load_file(self, fname):
-
-        
+    def load_file(self, fname):        
         ## THIS WORKS when run 2nd time
         #WebDriverWait(self.driver, 180).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator))).click()
 
         n_tries = 0
         while n_tries < 3:
             try:
-                print("xxx n_tries: {n}".format(n=n_tries))
+                print("...n_tries: {n}".format(n=n_tries))
                 # find file folder icon on left panel, and click
+                print("...click on file folder icon on the left panel")
                 folder_element = self.driver.find_element_by_xpath(self._file_folder_locator)
                 folder_element.click()
                 time.sleep(self._delay)
 
-                print("xxx double clicking on file name")
+                print("... double clicking on file name")
                 file_locator = "//li[@class='jp-DirListing-item'][@title='{f}']".format(f=fname)
                 file_element = self.driver.find_element_by_xpath(file_locator)
                 actionChains = ActionChains(self.driver)
                 actionChains.move_to_element(file_element)
                 actionChains.double_click(file_element).perform()
  
-                print("xxx AFTER double clicking on file name xxx")
+                print("...after double clicking on file name xxx")
                 # this may be TEMPORARY -- check if 'File Load Error for clt.nc' pop up is temporary
                 print("...click on the File Load Error for clt.nc OK button -- is this TEMPORARY?")
-                print("xxx doing WebDriverWait...xxxx")
-                #load_el_present = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, self._file_load_error_ok_locator)))
-                #print("file_load_error_ok is present, n_tries: {n}".format(n=n_tries))
-                #load_el_visible = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, self._file_load_error_ok_locator)))
-                #print("file_load_error_ok element is visible, n_tries: {n}".format(n=n_tries))
+                print("...doing WebDriverWait...till the element is clickable")
                 load_el = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator)))
                 print("FOUND file_load_error_ok element, n_tries: {n}".format(n=n_tries))
                 load_el.click()
@@ -79,10 +74,6 @@ class MainPage(BasePage):
                 else:
                     print("going to retry...n_tries:{n}".format(n=n_tries))
 
-        # TESTING
-        #print("xxx see if we can find this temp pop up locator xxx")
-        #self.driver.find_element_by_xpath(self._temp_select_popup_locator)
-        #print("xxx FOUND it xxx")
 
         # validate that we have 'Select Kernel' pop up
         print("...looking for the 'Select Kernel' pop up")

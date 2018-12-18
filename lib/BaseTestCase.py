@@ -53,14 +53,14 @@ class BaseTestCase(unittest.TestCase):
             #               "safebrowsing.enabled": True,
             #               "prompt_for_download": True}
             #chrome_options.add_experimental_option("prefs", preferences)
-            #self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver",
-            #                               chrome_options=chrome_options,
-            #                               service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
+            self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver",
+                                           chrome_options=chrome_options,
+                                           service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
 
-            #self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',
-            self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
-                                           desired_capabilities=DesiredCapabilities.CHROME,
-                                           options=chrome_options)
+            # FOLLOWING works
+            #self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
+            #                               desired_capabilities=DesiredCapabilities.CHROME,
+            #                               options=chrome_options)
 
         elif browser == 'firefox':
             firefox_profile = FirefoxProfile() # profile                                                                            
