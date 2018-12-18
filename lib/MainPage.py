@@ -70,11 +70,11 @@ class MainPage(BasePage):
         while n_tries < 3:
             try:
                 load_el_present = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, self._file_load_error_ok_locator)))
-                print("file_load_error_ok is present")
+                print("file_load_error_ok is present, n_tries: {n}".format(n=n_tries))
                 load_el_visible = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, self._file_load_error_ok_locator)))
-                print("file_load_error_ok element is visible!!")
+                print("file_load_error_ok element is visible, n_tries: {n}".format(n=n_tries))
                 load_el = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator)))
-                print("FOUND file_load_error_ok element")
+                print("FOUND file_load_error_ok element, n_tries: {n}".format(n=n_tries))
                 load_el.click()
             except TimeoutException:
                 n_tries = n_tries + 1
