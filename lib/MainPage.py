@@ -64,7 +64,18 @@ class MainPage(BasePage):
         
         ## THIS WORKS when run 2nd time
         print("xxx doing WebDriverWait...")
-        WebDriverWait(self.driver, 180).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator))).click()
+        #WebDriverWait(self.driver, 180).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator))).click()
+
+        n_tries = 0
+        while n_tries < 3:
+            try:
+                load_el = WebDriverWait(self.driver, 180).until(EC.element_to_be_clickable((By.XPATH, self._file_load_error_ok_locator)))
+                print("FOUND file_load_error_ok element")
+                load_el.click()
+            except TimeoutException:
+                n_tries = n_tries + 1
+                if n_tries == 3:
+                    raise TimeoutException
 
         # TESTING
         #print("xxx see if we can find this temp pop up locator xxx")
