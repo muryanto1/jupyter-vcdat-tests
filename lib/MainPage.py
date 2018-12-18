@@ -47,6 +47,7 @@ class MainPage(BasePage):
         file_locator = "//li[@class='jp-DirListing-item'][@title='{f}']".format(f=fname)
         file_element = self.driver.find_element_by_xpath(file_locator)
         actionChains = ActionChains(self.driver)
+        actionChains.move_to_element(file_element)
         actionChains.double_click(file_element).perform()
         time.sleep(self._delay)
         print("xxx AFTER double clicking on file name xxx")
